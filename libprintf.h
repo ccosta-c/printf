@@ -6,7 +6,7 @@
 /*   By: ccosta-c <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/12 14:31:09 by ccosta-c          #+#    #+#             */
-/*   Updated: 2022/12/16 11:26:38 by ccosta-c         ###   ########.fr       */
+/*   Updated: 2023/01/02 11:05:12 by ccosta-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,3 +15,5 @@
 #include <unistd.h>
 
 int	ft_printf(const char *str, ...);
+int	ft_integer(long nb);
+int	ft_char(char x);
