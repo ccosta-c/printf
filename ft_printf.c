@@ -6,13 +6,13 @@
 /*   By: ccosta-c <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/12 14:26:29 by ccosta-c          #+#    #+#             */
-/*   Updated: 2022/12/21 13:29:07 by ccosta-c         ###   ########.fr       */
+/*   Updated: 2023/01/02 11:27:05 by ccosta-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libprintf.h"
 
-static size_t	check_conversion(const char *str, va_list va_args)
+static size_t	check_conversion(const char *str, va_list var_args)
 {
 	int	count;
 
@@ -21,7 +21,7 @@ static size_t	check_conversion(const char *str, va_list va_args)
 	{
 		count += write(1, "%", 1);
 	}
-	if (*(str + 1) == 'i')
+	if (*(str + 1) == 'i' || *(str + 1) == 'd')
 	{
 		count += ft_integer(va_arg(var_args, int));
 	}
@@ -49,6 +49,6 @@ int	ft_printf(const char *str, ...)
 
 int main(void)
 {
-	printf("%d", ft_printf("%%"));
+	printf("\n%d\n", ft_printf("%d", -2147483648));
 	return (0);
 }
