@@ -6,7 +6,7 @@
 #    By: ccosta-c <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/04 13:40:24 by ccosta-c          #+#    #+#              #
-#    Updated: 2023/01/02 16:19:40 by ccosta-c         ###   ########.fr        #
+#    Updated: 2023/01/03 15:44:40 by ccosta-c         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -31,6 +31,10 @@ clean:
 fclean: clean
 	rm -f $(NAME)
 	
+run: fclean all
+	$(COMPILER) $(FLAGS) $(NAME)
+	./a.out
+
 re: fclean all
 
 .PHONY: all clean fclean re

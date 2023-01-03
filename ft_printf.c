@@ -6,11 +6,11 @@
 /*   By: ccosta-c <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/12 14:26:29 by ccosta-c          #+#    #+#             */
-/*   Updated: 2023/01/02 16:19:03 by ccosta-c         ###   ########.fr       */
+/*   Updated: 2023/01/03 15:57:58 by ccosta-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libprintf.h"
+#include "ft_printf.h"
 
 static size_t	check_conversion(const char *str, va_list var_args)
 {
@@ -39,21 +39,27 @@ int	ft_printf(const char *str, ...)
 	count = 0;
 	while (*str)
 	{
-		if(*str == '%')
+		if (*str == '%')
 		{
 			count += check_conversion(str, var_args);
 			str++;
+		}
+		if (*str == '\n')
+		{
+			count += ft_char('\n');
 		}
 		str++;
 	}
 	return (count);
 }
-
-/*
+/* 
 int main(void)
 {
-	ft_printf("%X", 0xFFFFFFFF);
-	printf("\n%x\n", 0xFFFFFFFF);
+	int	counter_mine;
+	int	counter_official;
+
+	counter_mine = ft_printf("\n%%\n");
+	counter_official = printf("\n%%\n");
+	printf("counter_mine%i\ncounter_official%i\n", counter_mine, counter_official);
 	return (0);
-}
-*/
+} */
