@@ -6,22 +6,22 @@
 /*   By: ccosta-c <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/02 11:59:18 by ccosta-c          #+#    #+#             */
-/*   Updated: 2023/01/02 15:33:07 by ccosta-c         ###   ########.fr       */
+/*   Updated: 2023/01/03 15:59:00 by ccosta-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libprintf.h"
+#include "ft_printf.h"
 
-int		ft_hex(unsigned long nb, char c)
+int	ft_hex(unsigned long nb, char c)
 {
-	int	count;
-	char *base;
-	
+	int		count;
+	char	*base;
+
+	count = 0;
 	if (c == 'x')
 		base = "0123456789abcdef";
 	if (c == 'X')
 		base = "0123456789ABCDEF";
-	count = 0;
 	if (nb >= 16)
 	{
 		count += ft_hex(nb / 16, c);
