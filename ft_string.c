@@ -1,22 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_char.c                                          :+:      :+:    :+:   */
+/*   ft_string.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ccosta-c <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/02 11:00:10 by ccosta-c          #+#    #+#             */
-/*   Updated: 2023/01/04 13:29:57 by ccosta-c         ###   ########.fr       */
+/*   Created: 2023/01/04 10:52:40 by ccosta-c          #+#    #+#             */
+/*   Updated: 2023/01/04 13:31:18 by ccosta-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	ft_char(char x)
+int	ft_string(char *str)
 {
-	int	count;
+	int count;
 
 	count = 0;
-	count = write(1, &x, 1);
+	if (!str)
+		return (write(1, "(null)", 6));
+	while (*str)
+	{
+		count += ft_char(*str);
+		str++;
+	}
 	return (count);
 }
