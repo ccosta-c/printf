@@ -6,7 +6,7 @@
 /*   By: ccosta-c <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/02 11:59:18 by ccosta-c          #+#    #+#             */
-/*   Updated: 2023/01/03 15:59:00 by ccosta-c         ###   ########.fr       */
+/*   Updated: 2023/01/05 11:54:15 by ccosta-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,14 +22,14 @@ int	ft_hex(unsigned long nb, char c)
 		base = "0123456789abcdef";
 	if (c == 'X')
 		base = "0123456789ABCDEF";
+	if (nb < 16)
+	{
+		count += ft_char(*(base + nb));
+	}
 	if (nb >= 16)
 	{
 		count += ft_hex(nb / 16, c);
 		count += ft_hex(nb % 16, c);
-	}
-	if (nb < 16)
-	{
-		count += ft_char(*(base + nb));
 	}
 	return (count);
 }
