@@ -6,7 +6,7 @@
 /*   By: ccosta-c <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/12 14:26:29 by ccosta-c          #+#    #+#             */
-/*   Updated: 2023/01/05 14:07:52 by ccosta-c         ###   ########.fr       */
+/*   Updated: 2023/01/05 14:12:45 by ccosta-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,9 +18,7 @@ static int	check_conversion(const char *str, va_list var_args)
 
 	count = 0;
 	if (*(str + 1) == '%')
-	{
 		count += ft_char('%');
-	}
 	if (*(str + 1) == 'i' || *(str + 1) == 'd')
 		count += ft_integer(va_arg(var_args, int));
 	if (*(str + 1) == 'x' || *(str + 1) == 'X')
